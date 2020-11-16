@@ -36,8 +36,8 @@ This project require NodeJS v12.
 Clone this project
 
 ```bash
-> git clone https://github.com/ArugaZ/whatsapp-bot.git
-> cd whatsapp-bot
+> git clone https://github.com/HAFizh-15/ES-KERINGBOT
+> cd ES-KERINGBOT
 ```
 
 Install the dependencies:
@@ -69,10 +69,6 @@ pls dont remove my github link:)
 
 ## Features
 
-| 18+ |Yes|
-| ------------- | ------------- |
-| Nekopoi |✅|
-
 | Creator |Yes|
 | ------------- | ------------- |
 | Respond img to sticker|✅|
@@ -82,7 +78,6 @@ pls dont remove my github link:)
 | Respond giphy url to sticker|✅|
 | Make a meme from photo|✅|
 | Quotes maker result pict|✅|
-| Nulis Bot|✅|
 
 | Islam |Yes|
 | ------------- | ------------- |
