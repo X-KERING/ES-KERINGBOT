@@ -844,7 +844,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                 hehex += '╠➥'
                 hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
             }
-            hehex += '╚═〘 *BOT ./MrG3P5* 〙'
+            hehex += '╚═〘 *ES KERING BOT* 〙'
             await aruga.sendTextWithMentions(from, hehex)
             break
         case 'botstatus': {
