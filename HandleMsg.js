@@ -98,8 +98,7 @@ module.exports = HandleMsg = async (aruga, message) => {
         case 'tnc':
             await aruga.sendText(from, menuId.textTnC())
             break
-        case 'menu':
-        case 'help':
+	case 'helep':
             await aruga.sendText(from, menuId.textMenu(pushname))
             .then(() => ((isGroupMsg) && (isGroupAdmins)) ? aruga.sendText(from, `Menu Admin Grup: *${prefix}menuadmin*`) : null)
             break
@@ -184,7 +183,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             if (isMedia || isQuotedVideo) {
                 if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
                     var mediaData = await decryptMedia(message, uaOverride)
-                    aruga.reply(from, '[WAIT] Sedang di proses⏳ silahkan tunggu ± 1 min!', id)
+                    aruga.reply(from, '[WAIT] Sedang di proses⏳ silahkan tunggu ± 1 min! KLO GA SABAR MATI AJA', id)
                     var filename = `./media/stickergif.${mimetype.split('/')[1]}`
                     await fs.writeFileSync(filename, mediaData)
                     await exec(`gify ${filename} ./media/stickergf.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
@@ -287,7 +286,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                         hehex += '╠➥ '
                         hehex += response.data.data[i].name.transliteration.id.toLowerCase() + '\n'
                             }
-                        hehex += '╚═〘 🔰 *BOT ./MrG3P5* 🔰 〙'
+                        hehex += '╚═〘 🔰 *ES KERING BOT* 🔰 〙'
                     aruga.reply(from, hehex, id)
                 })
             } catch(err) {
