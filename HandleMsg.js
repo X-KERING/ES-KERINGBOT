@@ -150,7 +150,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                 const imageBase64 = `data:${_mimetype};base64,${mediaData.toString('base64')}`
                 aruga.sendImageAsSticker(from, imageBase64)
                 .then(() => {
-                    aruga.reply(from, 'Here\'s your sticker')
+                    aruga.reply(from, 'MAKAN TUH STICKER')
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 })
             } else if (args[0] === 'nobg') {
@@ -593,7 +593,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                     for (let i = 0; i < res.links.length; i++) {
                         heheq += `${res.links[i]}\n`
                     }
-                    aruga.reply(from, `Title: ${res.title}\n\nLink:\n${heheq}\nmasih tester bntr :v`)
+                    aruga.reply(from, `Title: ${res.title}\n\nLink:\n${heheq}\masih tester bntr :v`)
                 })
             })
             .catch(() => {
@@ -635,7 +635,7 @@ module.exports = HandleMsg = async (aruga, message) => {
 			})
 			break
         case 'chord':
-            if (args.length == 0) return aruga.reply(from, `Untuk mencari lirik dan chord dari sebuah lagu\bketik: ${prefix}chord [judul_lagu]`, id)
+            if (args.length == 0) return aruga.reply(from, `Untuk mencari lirik dan chord dari sebuah lagu\ketik: ${prefix}chord [judul_lagu]`, id)
             const chordq = body.slice(7)
             const chordp = await rugaapi.chord(chordq)
             await aruga.reply(from, chordp, id)
@@ -656,7 +656,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             axios.get(`https://arugaytdl.herokuapp.com/search?q=${body.slice(6)}`)
             .then(async (res) => {
                 await aruga.sendFileFromUrl(from, `${res.data[0].thumbnail}`, ``, `Lagu ditemukan\n\nJudul: ${res.data[0].title}\nDurasi: ${res.data[0].duration}detik\nUploaded: ${res.data[0].uploadDate}\nView: ${res.data[0].viewCount}\n\nsedang dikirim`, id)
-                axios.get(`https://arugaz.herokuapp.com/api/yta?url=https://youtu.be/${res.data[0].id}`)
+                axios.get(`https://st4rz.herokuapp.com/api/ytv?/${res.data[0].id}`)
                 .then(async(rest) => {
 					if (Number(rest.data.filesize.split(' MB')[0]) >= 10.00) return aruga.reply(from, 'Maaf ukuran file terlalu besar!')
                     await aruga.sendPtt(from, `${rest.data.result}`, id)
@@ -770,7 +770,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             })
             break
 		case 'bapakfont':
-			if (args.length == 0) return aruga.reply(from, `Mengubah kalimat menjadi alayyyyy\n\nketik ${prefix}bapakfont kalimat`, id)
+			if (args.length == 0) return aruga.reply(from, `Mengubah kalimat menjadi alay\n\nketik ${prefix}bapakfont kalimat`, id)
 			rugaapi.bapakfont(body.slice(11))
 			.then(async(res) => {
 				await aruga.reply(from, `${res}`, id)
