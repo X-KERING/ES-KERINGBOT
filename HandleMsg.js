@@ -514,6 +514,13 @@ module.exports = HandleMsg = async (aruga, message) => {
             })
             break
 
+			if (text.includes("!nulis")){
+  const teks = text.replace(/#nulis /, "")
+axios.get(`https://st4rz.herokuapp.com/api/nulis?text=${teks}`).then((res) => {
+    let hasil = `Download sendiri ya hasilnya dibawah, soalnya kalo dikirim langsung hasilnya blur\n\n${res.data.result.data}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
         //Random Images
         case 'anime':
             if (args.length == 0) return aruga.reply(from, `Untuk menggunakan ${prefix}anime\nSilahkan ketik: ${prefix}anime [query]\nContoh: ${prefix}anime random\n\nquery yang tersedia:\nrandom, waifu, husbu, neko`, id)
