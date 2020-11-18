@@ -265,16 +265,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             } else {
                 aruga.reply(from, `Pemakaian ${prefix}quotemaker |isi quote|author|theme\n\ncontoh: ${prefix}quotemaker |aku sayang kamu|Hafizh|random\n\nuntuk theme nya pakai random ya kak..`)
             }
-            break
-        case 'nulis':
-           if (args.length == 0) return aruga.reply(from, `Membuat bot menulis teks yang dikirim menjadi gambar\nPemakaian: ${prefix}nulis [teks]\n\ncontoh: ${prefix}nulis i love you 3000`, id)
-            const nulisq = body.slice(7)
-            const nulisp = await rugaapi.tulis(nulisq)
-            await aruga.sendImage(from, `${nulisp}`, '', 'Nih...\nKalo kecyduk jgn salahin bot asw', id)
-            .catch(() => {
-                aruga.reply(from, 'Ada yang eror!', id)
-            })
-            break
+            break     
 
         //Islam Command
         case 'listsurah':
